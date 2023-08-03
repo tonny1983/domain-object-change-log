@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:spring-data-jpa-mybatis;DB_CLOSE_ON_EXIT=TRUE;MODE=MYSQL;NON_KEYWORDS=user
+  liquibase:
+    change-log: classpath:changelog/changelog.yaml
+    enabled: true
+  jpa:
+    show-sql: true
+    format-sql: true
+mybatis:
+  type-aliases-package: cc.tonny.domainobjectchangelog.domain
+  mapper-locations: classpath*:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+logging.level:
+  root: debug
